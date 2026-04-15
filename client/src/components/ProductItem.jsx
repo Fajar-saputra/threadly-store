@@ -9,10 +9,13 @@ export default function ProductItem({ id, name, image, price }) {
     return (
         <Link className="text-gray-700 cursor-pointer" to={`/product/${id}`}>
             <div className="overflow-hidden">
-                <img src={image[0]} alt="" className="hover:scale-100 transition ease-in-out" />
+                <img src={image[0]} alt="" className="transition ease-in-out duration-300 hover:scale-110" />
             </div>
             <p className="pt-3 pb-1 text-sm">{name}</p>
-            <p className="text-sm font-medium">{ currency }{price}</p>
+            <p className="text-sm font-medium">
+                {currency}
+                {price}
+            </p>
         </Link>
     );
 }

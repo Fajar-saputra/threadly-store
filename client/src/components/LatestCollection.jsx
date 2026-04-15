@@ -13,7 +13,7 @@ const LatestCollection = () => {
         if (products && products.length > 0) {
             setLatestProduct(products.slice(0, 10));
         }
-    }, [products]); // Menjalankan ulang hanya jika data 'products' berubah
+    }, [products]);
 
     return (
         <div className="my-10">
@@ -27,9 +27,9 @@ const LatestCollection = () => {
             {/* Rendering products */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
                 {
-                    latestProducts.map((item, index) => (
+                    latestProducts.map((item) => (
                         <ProductItem 
-                            key={index} 
+                            key={item._id} 
                             id={item._id} 
                             name={item.name} 
                             image={item.image} 
