@@ -8,7 +8,6 @@ const BestSeller = () => {
     const [bestSeller, setBestSeller] = useState([]);
 
     useEffect(() => {
-        // FIX 2: Tambahkan pengecekan agar tidak error saat products masih loading/kosong
         if (products && products.length > 0) {
             const bestProduct = products.filter((item) => item.bestseller);
             setBestSeller(bestProduct.slice(0, 5));
