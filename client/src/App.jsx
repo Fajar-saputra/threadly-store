@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Orders from "./pages/Orders";
 import PlaceOrder from "./pages/PlaceOrder";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import ShopContextProvider from "./context/ShopContext";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                         <Route path="/orders" element={<Orders />} />
                         <Route path="/place-order" element={<PlaceOrder />} />
                     </Routes>
+                    <Footer />
                 </div>
             </ShopContextProvider>
         </BrowserRouter>
