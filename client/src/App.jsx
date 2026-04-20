@@ -11,6 +11,7 @@ import PlaceOrder from "./pages/PlaceOrder";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ShopContextProvider from "./context/ShopContext";
+import SearchBar from "./components/SearchBar";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
             <ShopContextProvider>
                 <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
                     <Navbar />
+                    <SearchBar />
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/product/:id" element={<Product />} />

@@ -6,7 +6,7 @@ import ProductItem from "../components/ProductItem";
 
 
 export default function Collection() {
-    const { products } = useContext(ShopContext);
+    const { products, search, showSearch } = useContext(ShopContext);
     const [showFilter, setShowFilter] = useState(false);
     const [category, setCategory] = useState([]);
     const [subCategory, setSubCategory] = useState([]);
@@ -20,6 +20,12 @@ export default function Collection() {
     // Data filterProducts hanya dihitung ULANG jika salah satu dependency di [] berubah
     const filterProducts = useMemo(() => {
         let tempProducts = [...products];
+
+
+        // search
+        if (showSearch && search) {
+            tempProducts = tempProducts.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+        }
 
         // 1. Filter Kategori
         if (category.length > 0) {
@@ -40,7 +46,7 @@ export default function Collection() {
             default:
                 return tempProducts;
         }
-    }, [category, subCategory, typeSort, products]); 
+    }, [category, subCategory, typeSort, products, showSearch, search]); 
 
     return (
         <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
