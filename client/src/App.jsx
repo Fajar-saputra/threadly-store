@@ -22,7 +22,7 @@ function App() {
                     <SearchBar />
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/product/:id" element={<Product />} />
+                        <Route path="/product/:productId" element={<Product />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/cart" element={<Cart />} />
                         <Route path="/collection" element={<Collection />} />
